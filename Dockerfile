@@ -15,6 +15,8 @@ RUN apt-get update \
     vim \
     wget \
     p7zip-full \
+    fuse \
+    exfat-fuse \
   && rm -rf /var/lib/apt/lists/*
   
 # https://wiki.debian.org/Locale#Manually
