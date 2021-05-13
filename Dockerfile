@@ -15,9 +15,11 @@ RUN apt-get update \
     vim \
     wget \
     p7zip-full \
-    fuse \
+    fuse-overlayfs　\
+    libfuse2　\
+    libglib2.0-0　＼
   && rm -rf /var/lib/apt/lists/*
-RUN　mknod -m 666 /dev/fuse c 10 229
+  
 # https://wiki.debian.org/Locale#Manually
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
   && locale-gen
