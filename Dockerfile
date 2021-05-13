@@ -17,7 +17,7 @@ RUN apt-get update \
     p7zip-full \
     fuse-overlayfs　\
     libfuse2　\
-    libglib2.0-0
+    libglib2.0-0　＼
   && rm -rf /var/lib/apt/lists/*
   
 # https://wiki.debian.org/Locale#Manually
