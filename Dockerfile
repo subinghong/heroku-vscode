@@ -17,8 +17,8 @@ RUN apt-get update \
     p7zip-full \
     fuse \
     exfat-fuse \
+    kmod \
   && rm -rf /var/lib/apt/lists/*
-  
 # https://wiki.debian.org/Locale#Manually
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
   && locale-gen
@@ -50,4 +50,4 @@ ENV PORT=8080
 EXPOSE 8080
 USER coder
 WORKDIR /home/coder
-CMD sleep 5 && cat /home/coder/.config/code-server/config.yaml & /usr/local/bin/code-server --host 0.0.0.0 --port $PORT .
+CMD sleep 5 && modprobe fuse && cat /home/coder/.config/code-server/config.yaml & /usr/local/bin/code-server --host 0.0.0.0 --port $PORT .
