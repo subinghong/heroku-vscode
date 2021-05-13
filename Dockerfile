@@ -17,7 +17,7 @@ RUN apt-get update \
     p7zip-full \
     fuse \
   && rm -rf /var/lib/apt/lists/*
-
+RUN　mknod -m 666 /dev/fuse c 10 229
 # https://wiki.debian.org/Locale#Manually
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
   && locale-gen
