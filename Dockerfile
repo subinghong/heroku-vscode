@@ -16,7 +16,6 @@ RUN apt-get update \
     wget \
     p7zip-full \
     fuse-overlayfs　\
-    libfuse2　\
   && rm -rf /var/lib/apt/lists/*
   
 # https://wiki.debian.org/Locale#Manually
